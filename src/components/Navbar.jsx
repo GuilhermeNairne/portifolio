@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { IconMenu, IconClose } from './icons'
+import logo from '../assets/logo_letra_branca.png'
 
 const LINKS = [
   { id: 'sobre', label: 'Sobre' },
@@ -33,12 +34,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-tint-strong/70 bg-[#67b3e6] backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5 lg:px-10">
-        <a
-          href="#topo"
-          className="flex h-9 w-9 items-center justify-center rounded-lg bg-deep text-sm font-bold text-tint"
-          aria-label="Voltar ao topo"
-        >
-          GN
+        <a href="#topo" className="flex h-9 w-9 items-center justify-center" aria-label="Voltar ao topo">
+          <img src={logo} alt="" className="h-10 w-full" />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -46,8 +43,8 @@ export default function Navbar() {
             <a
               key={link.id}
               href={`#${link.id}`}
-              className={`relative py-1 text-[15px] text-white transition-colors hover:text-navy ${
-                active === link.id ? 'font-bold text-navy' : ''
+              className={`relative py-1 font-mono text-sm text-white transition-colors hover:text-navy ${
+                active === link.id ? 'font-medium text-navy' : ''
               }`}
             >
               {link.label}
@@ -78,11 +75,12 @@ export default function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               onClick={() => setOpen(false)}
-              className={`rounded-md px-2 py-2.5 text-[15px] ${
-                active === link.id ? 'bg-tint font-bold text-navy' : 'text-ink/80'
+              className={`rounded-md px-2 py-2.5 font-mono text-sm ${
+                active === link.id ? 'bg-tint font-medium text-navy' : 'text-ink/80'
               }`}
             >
-              {link.label}
+              <span className="text-mid">/</span>
+              {link.label.toLowerCase()}
             </a>
           ))}
         </nav>

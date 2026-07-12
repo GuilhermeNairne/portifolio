@@ -78,9 +78,9 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={150} className="w-full max-w-sm shrink-0 lg:max-w-md">
-          <CoverIllustration />
-        </Reveal>
+       <Reveal delay={150} className="w-full max-w-sm shrink-0 lg:max-w-md -mt-6 lg:-mt-10">
+  <CoverIllustration />
+</Reveal>
       </div>
     </section>
   )
