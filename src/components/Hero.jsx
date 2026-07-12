@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { IconGithub, IconLinkedin, IconDownload, IconMail } from './icons'
 import CoverIllustration from './CoverIllustration'
+import ContactModal from './ContactModal'
 import Reveal from './Reveal'
 import wallpaper from '../assets/walpaper.jpg'
 
@@ -9,6 +11,8 @@ const STATS = [
 ]
 
 export default function Hero() {
+  const [contactOpen, setContactOpen] = useState(false)
+
   return (
     <section
       id="topo"
@@ -38,15 +42,16 @@ export default function Hero() {
           </dl>
 
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-            <a
-              href="mailto:guilhermemen2003@gmail.com"
+            <button
+              type="button"
+              onClick={() => setContactOpen(true)}
               className="inline-flex items-center gap-2 rounded-lg bg-deep px-6 py-3 text-[15px] font-bold text-white transition-colors hover:bg-navy"
             >
               <IconMail className="h-4.5 w-4.5" />
               Fale comigo
-            </a>
+            </button>
             <a
-              href="/assets/curriculo-guilherme-nairne.pdf"
+              href="/curriculo_guilherme_men_nairne.pdf"
               download
               className="inline-flex items-center gap-2 rounded-lg border border-deep/30 bg-white/70 px-6 py-3 text-[15px] font-bold text-deep transition-colors hover:bg-white"
             >
@@ -81,6 +86,8 @@ export default function Hero() {
   <CoverIllustration />
 </Reveal>
       </div>
+
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
     </section>
   )
 }

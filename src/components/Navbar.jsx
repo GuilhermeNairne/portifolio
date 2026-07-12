@@ -15,20 +15,46 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const sections = LINKS.map((l) => document.getElementById(l.id)).filter(Boolean)
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-        if (visible[0]) setActive(visible[0].target.id)
-      },
-      { rootMargin: '-40% 0px -50% 0px', threshold: 0 },
+    const sections = LINKS.map((l) => ({ id: l.id, el: document.getElementById(l.id) })).filter(
+      (s) => s.el,
     )
 
-    sections.forEach((s) => observer.observe(s))
-    return () => observer.disconnect()
+    let ticking = false
+
+    const updateActive = () => {
+      ticking = false
+
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+      if (atBottom) {
+        setActive(LINKS[LINKS.length - 1].id)
+        return
+      }
+
+      const line = window.innerHeight * 0.4
+      let current = sections[0]?.id ?? ''
+      for (const section of sections) {
+        if (section.el.getBoundingClientRect().top <= line) {
+          current = section.id
+        }
+      }
+      setActive(current)
+    }
+
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(updateActive)
+    }
+
+    updateActive()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [])
 
   return (

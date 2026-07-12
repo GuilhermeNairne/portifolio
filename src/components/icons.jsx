@@ -85,6 +85,22 @@ export function IconDownload(props) {
   )
 }
 
+export function IconCheck(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} {...props}>
+      <path d="m5 12.5 4.5 4.5L19 7" />
+    </svg>
+  )
+}
+
+export function IconWhatsapp(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12.01 2C6.48 2 2 6.48 2 12.01c0 1.86.5 3.65 1.44 5.23L2 22l4.9-1.4a10 10 0 0 0 5.11 1.4h.01c5.53 0 10.01-4.48 10.01-10.01C22 6.48 17.53 2 12.01 2Zm5.85 14.32c-.25.7-1.23 1.28-2 1.44-.53.11-1.23.2-3.58-.77-3.01-1.25-4.95-4.3-5.1-4.5-.15-.2-1.22-1.63-1.22-3.1 0-1.48.77-2.2 1.05-2.5.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.31.31-.13.6.17.3.77 1.28 1.66 2.08 1.14 1.03 2.1 1.35 2.4 1.5.3.15.47.13.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.13.07.75-.18 1.45Z" />
+    </svg>
+  )
+}
+
 export function IconMenu(props) {
   return (
     <svg viewBox="0 0 24 24" {...base} {...props}>
@@ -143,6 +159,40 @@ export function IconSparkle(props) {
     <svg viewBox="0 0 24 24" {...base} {...props}>
       <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
       <path d="M12 8a4 4 0 0 0 4 4 4 4 0 0 0-4 4 4 4 0 0 0-4-4 4 4 0 0 0 4-4Z" />
+    </svg>
+  )
+}
+
+export function IconTask(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} {...props}>
+      <rect x="4" y="4" width="16" height="16" rx="3" />
+      <path d="m8 12.5 2.2 2.2L16 9" />
+    </svg>
+  )
+}
+
+export function IconFinance(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M4 19V10M10 19V5M16 19v-7M20 19H4" />
+    </svg>
+  )
+}
+
+export function IconArrow(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  )
+}
+
+export function IconBell(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M6 10a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5h-15S6 14 6 10Z" />
+      <path d="M10 18.5a2 2 0 0 0 4 0" />
     </svg>
   )
 }
