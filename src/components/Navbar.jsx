@@ -58,7 +58,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-tint-strong/70 bg-[#67b3e6] backdrop-blur-sm">
+    <header className="sticky top-0 z-50  border-tint-strong/70 bg-[#67b3e6] backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5 lg:px-10">
         <a href="#topo" className="flex h-9 w-9 items-center justify-center" aria-label="Voltar ao topo">
           <img src={logo} alt="" className="h-10 w-full" />
@@ -105,8 +105,8 @@ export default function Navbar() {
                 active === link.id ? 'bg-tint font-medium text-navy' : 'text-ink/80'
               }`}
             >
-              <span className="text-mid">/</span>
-              {link.label.toLowerCase()}
+              <span className="text-mid"></span>
+              {link.label}
             </a>
           ))}
         </nav>
