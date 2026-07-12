@@ -45,7 +45,6 @@ export default function Hero() {
               <IconMail className="h-4.5 w-4.5" />
               Fale comigo
             </a>
-            {/* TODO: substituir href pelo PDF real do currículo em /assets */}
             <a
               href="/assets/curriculo-guilherme-nairne.pdf"
               download
@@ -67,7 +66,7 @@ export default function Hero() {
               <IconGithub className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com/in/guilherme-men-nairne"
+              href="https://www.linkedin.com/in/guilherme-men-linhares-nairne-332aa7181/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn de Guilherme"

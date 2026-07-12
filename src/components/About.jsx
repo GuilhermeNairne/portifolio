@@ -15,7 +15,7 @@ const CARDS = [
   {
     icon: IconServer,
     title: 'Backend',
-    text: 'APIs REST robustas e seguras com Node.js, NestJS e bancos como PostgreSQL e MongoDB.',
+    text: 'APIs REST robustas e seguras com Node.js, NestJS e bancos como PostgreSQL, OracleDB e MongoDB.',
   },
 ]
 
