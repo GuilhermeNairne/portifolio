@@ -1,6 +1,17 @@
-import { IconGithub, IconLinkedin, IconMail } from './icons'
+import { useState } from 'react'
+import { IconGithub, IconLinkedin, IconMail, IconWhatsapp, IconCheck } from './icons'
+
+const EMAIL = 'guilhermemen2003@gmail.com'
 
 export default function Footer() {
+  const [copied, setCopied] = useState(false)
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(EMAIL)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <footer id="contato" className="bg-navy px-6 py-16 text-center lg:px-10">
       <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
@@ -10,15 +21,25 @@ export default function Footer() {
         Aberto a novas oportunidades e projetos. É só chamar.
       </p>
 
-      <a
-        href="mailto:guilhermemen2003@gmail.com"
+      <button
+        type="button"
+        onClick={copyEmail}
         className="mt-7 inline-flex items-center gap-2 rounded-lg bg-deep px-6 py-3 text-[15px] font-bold text-white transition-colors hover:bg-mid"
       >
-        <IconMail className="h-4.5 w-4.5" />
-        guilhermemen2003@gmail.com
-      </a>
+        {copied ? <IconCheck className="h-4.5 w-4.5" /> : <IconMail className="h-4.5 w-4.5" />}
+        {copied ? 'E-mail copiado!' : EMAIL}
+      </button>
 
       <div className="mt-8 flex items-center justify-center gap-5">
+        <a
+          href="https://wa.me/5544998696460"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="WhatsApp de Guilherme"
+          className="text-white/60 transition-colors hover:text-white"
+        >
+          <IconWhatsapp className="h-6 w-6" />
+        </a>
         <a
           href="https://github.com/GuilhermeNairne"
           target="_blank"
