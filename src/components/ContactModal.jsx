@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { IconClose, IconMail, IconLinkedin, IconWhatsapp, IconCheck } from './icons'
 
-const EMAIL = 'guilhermemen2003@gmail.com'
+const EMAIL = 'guilherme.men.nairne@gmail.com'
 
 const CONTACTS = [
   {
