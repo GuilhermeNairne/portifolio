@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { IconGithub, IconLinkedin, IconMail, IconWhatsapp, IconCheck } from './icons'
 
-const EMAIL = 'guilhermemen2003@gmail.com'
+const EMAIL = 'guilherme.men.nairne@gmail.com'
 
 export default function Footer() {
   const [copied, setCopied] = useState(false)
